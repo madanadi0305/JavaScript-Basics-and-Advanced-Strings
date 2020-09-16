@@ -1,5 +1,5 @@
 const  checkStringLength=(inputString)=>{
-var string1=inputString.split("");
+var string1=inputString;
 var length;
 var string_zero='zero';
 if(string1===""){

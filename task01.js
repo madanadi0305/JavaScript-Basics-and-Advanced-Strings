@@ -10,9 +10,9 @@ length=string1.length;
 }
 else{
     length=string1.length;
-    return length;
+    
 }
-
+return length;
 };
 
 module.exports=checkStringLength;

@@ -1,6 +1,8 @@
 # String Exercise 1
 
-**Open file named task01.js** and Write a JS function that returns the length of the string. If the string is empty, it returns zero. Use StringName.length to calculate the length of a string. Sample Input: String = "Apple". Expected Output: 5.
+**Open file named task01.js** and Write a JS function that returns the length of the string. 
+If the string is empty, it returns zero. Use StringName.
+length to calculate the length of a string. Sample Input: String = "Apple". Expected Output: 5.
 
 Hint:
 

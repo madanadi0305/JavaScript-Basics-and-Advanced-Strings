@@ -1,6 +1,7 @@
 # LastIndexof()
 
-In the below example, we have used the lastIndexOf() method to find the index of the last appearance of 'Train' in the given string str. Then, we called the function outside { } (curly brackets) to see the result.
+In the below example, we have used the lastIndexOf() method to find the index of the last appearance of 'Train' 
+in the given string str. Then, we called the function outside { } (curly brackets) to see the result.
 
 - Create a function with name and parameters
 

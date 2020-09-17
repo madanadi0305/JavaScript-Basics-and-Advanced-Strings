@@ -12,7 +12,7 @@ function capitaliseFirstLetter(string){
                 result_string=result_string+k[j];
             }
         }
- if(i<split_string.length){
+ if(i<split_string.length-1){
      result_string=result_string+" ";  
  }
       

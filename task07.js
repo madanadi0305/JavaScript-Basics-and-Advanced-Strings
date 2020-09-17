@@ -12,7 +12,10 @@ function capitaliseFirstLetter(string){
                 result_string=result_string+k[j];
             }
         }
-     result_string=result_string+" ";   
+ if(i<split_string.length){
+     result_string=result_string+" ";  
+      }
+      
     }
     return result_string;
 }

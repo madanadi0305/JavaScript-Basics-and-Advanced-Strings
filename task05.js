@@ -13,6 +13,7 @@ for(var j=0;j<substring.length;j++){
 }
 
 }
-return first_alphabet_array;
+var first_alphabet_array_final=first_alphabet_array.join(" ");
+return first_alphabet_array_final;
 };
 module.exports=returnFirstLetters;

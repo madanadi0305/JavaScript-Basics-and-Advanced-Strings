@@ -7,7 +7,7 @@ const caseConversion=(string)=>{
      if(ch===ch.toUpperCase()){
       result=result+ch.toLowerCase();
      }
-     else if(ch===ch.toLowerCase){
+     else if(ch===ch.toLowerCase()){
          result=result+ch.toUpperCase();
      }
 

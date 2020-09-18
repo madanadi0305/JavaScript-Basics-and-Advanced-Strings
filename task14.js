@@ -1,7 +1,7 @@
 function returnPartOfString(string,character,flag){
 var string1=string.split("");
 var result_string="";
-var string2=string.split("&");
+var string2=string.split(character);
 for(var i=0;i<string1.length;i++){
     if(string1[i]==character){
      if(flag===1){

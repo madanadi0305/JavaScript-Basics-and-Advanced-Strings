@@ -12,6 +12,6 @@ result[i]+=string1[i].toUpperCase();
  }  
 }
 var result_final=result.join("");
-
+return result_final;
 }
 module.exports=capitaliseVowels;

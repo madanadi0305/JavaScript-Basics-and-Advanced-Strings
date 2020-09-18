@@ -1,5 +1,5 @@
 function insertStringAtIndex(string,substring,index){
-var result="  ";
+var result="";
 var string2="";
 var n=string.length;
 var string1=string.split("");

@@ -28,3 +28,4 @@ function firstOccurenceOfSubString(string,substring){
   }
   
 }
+module.exports=firstOccurenceOfSubString;

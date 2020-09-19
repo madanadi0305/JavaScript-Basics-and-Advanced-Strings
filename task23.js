@@ -5,7 +5,7 @@ var str1=[];
 
 for(var i=0;i<string.length;i++)
 { val=string.charCodeAt(i);
-  if(val===" "){
+  if(string[i]===" "){
      continue;
   }
   else{

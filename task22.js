@@ -1,6 +1,6 @@
 const findSubString=(string,substring)=>{
 var is_Found;
-if(substring===" " || substring==="")
+if(substring===" ")
   {
     return false;
   }

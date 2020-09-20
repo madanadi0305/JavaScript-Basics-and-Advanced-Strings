@@ -1,23 +1,25 @@
-const findSubString=(string,substring)=>{
-var is_Found;
-
-var index=string.indexOf(substring);
-while(true){
-  is_Found=0;
-if(index===-1){
-is_Found=0;
-//break;
-}
-else{
-  is_Found=1;
-}
-
-}
-if(is_Found===1){
-  return true;
-}
-else{
-  return false;
-}
-};
-module.exports=findSubString;
+ function checkOccurence(string,substring){
+   var count=0;
+   var is_Found;
+   var index=string.indexOf(substring);
+   while(true){
+     is_Found=0;
+     if(index!==-1){
+       is_Found=1;
+     //count=count+1;
+       //index=string.indexOf(substring,index+1);
+     }
+     
+       break;
+     
+     
+     
+   }
+   if(is_Found===1){
+     return true;
+   }
+ else{
+   return false;
+ }
+ }
+ module.exports=checkOccurence;

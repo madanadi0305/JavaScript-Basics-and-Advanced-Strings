@@ -1,9 +1,11 @@
 function checkLastSubString(string,substring){
     var string1=string.split(" ");
     var is_Found;
-   // if(substring=" "){
-     // return false;
-    //}
+    if(substring=""||substring===null||string===null||string===""){
+      is_Found=0;
+      return false;
+    }
+    else{
     for(var i=0;i<string1.length;i++){
       is_Found=0;
       if(i===(string1.length-1)){
@@ -23,7 +25,7 @@ function checkLastSubString(string,substring){
     else{
       return false;
     }
-    
+    }
   }
 
   module.exports=checkLastSubString;

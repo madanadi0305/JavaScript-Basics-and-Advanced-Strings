@@ -11,7 +11,7 @@ is_Found=0;
 else{
   is_Found=1;
 }
-break;
+
 }
 if(is_Found===1){
   return true;

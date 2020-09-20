@@ -1,7 +1,7 @@
 function checkLastSubString(string,substring){
     var string1=string.split(" ");
     var is_Found;
-    if(substring=" "|| string===" "){
+    if(substring=" "){
       return false;
     }
     for(var i=0;i<string1.length;i++){

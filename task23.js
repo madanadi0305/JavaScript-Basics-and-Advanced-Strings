@@ -8,9 +8,9 @@ if(string[i]===" "){
   //continue;
   str1.push(" ");
 }
-//else{
+else{
 str1.push(string.charCodeAt(i)+number);
-//}
+}
 }
 
 for(var i=0;i<str1.length;i++){

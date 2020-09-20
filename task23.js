@@ -17,6 +17,6 @@ for(var i=0;i<str1.length;i++){
   elem=String.fromCharCode(str1[i]);
   str2.push(elem);
 }
-return str2;
+return str2.join("");
 };
 module.exports=incrementMessage;

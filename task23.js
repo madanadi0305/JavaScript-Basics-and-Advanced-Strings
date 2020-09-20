@@ -1,19 +1,22 @@
 const incrementMessage=(string,number)=>{
 var val;
-var str2="";
+var elem;
 var str1=[];
-
-for(var i=0;i<string.length;i++)
-{ val=string.charCodeAt(i);
-  if(string[i]===" "){
-     continue;
-  }
-  else{
-     val=val+number;
-   str1.push(val);
-  }
+var str2=[];
+for(var i=0;i<string.length;i++){
+if(string[i]===" "){
+  //continue;
+  str1.push(" ");
 }
-str2=str2+String.fromCharCode.apply(null,str1);
+else{
+str1.push(String.charCodeAt(i)+number);
+}
+}
+
+for(var i=0;i<str1.length;i++){
+  elem=String.fromCharCode(str1[i]);
+  str2.push(elem);
+}
 return str2;
 };
 module.exports=incrementMessage;

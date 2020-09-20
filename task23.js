@@ -9,7 +9,7 @@ if(string[i]===" "){
   str1.push(" ");
 }
 else{
-str1.push(String.charCodeAt(i)+number);
+str1.push(string.charCodeAt(i)+number);
 }
 }
 

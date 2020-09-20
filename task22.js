@@ -4,6 +4,7 @@ var index=string.indexOf(string);
 if(index!==-1){
   return true;
 }
+if(substring===" "){return false;}
 else{
   return false;
 }

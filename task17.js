@@ -12,7 +12,7 @@ function checkLastSubString(string,substring){
          is_Found=1; 
           //break;
         }
-        else if(string1.indexOf(substring,string1.length-substring.length)!==-1){
+        else if(string1.indexOf(substring,string.length-substring.length)!==-1){
         is_Found=2;
         }
       }

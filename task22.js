@@ -8,7 +8,7 @@
        }
    while(true){
      is_Found=0;
-     if(index!==-1){
+     if(index!==-1||(substring===substring.toUpperCase()|| substring===substring.toLowerCase())){
        is_Found=1;
      //count=count+1;
        //index=string.indexOf(substring,index+1);

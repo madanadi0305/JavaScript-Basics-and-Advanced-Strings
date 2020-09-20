@@ -2,6 +2,10 @@
    var count=0;
    var is_Found;
    var index=string.indexOf(substring);
+    if(substring===""){
+         //is_Found=0;
+      return false;
+       }
    while(true){
      is_Found=0;
      if(index!==-1){

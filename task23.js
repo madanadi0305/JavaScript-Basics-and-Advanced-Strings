@@ -4,10 +4,10 @@ var elem;
 var str1=[];
 var str2=[];
 for(var i=0;i<string.length;i++){
-/*if(string[i]===" "){
+if(string[i]===" "){
   //continue;
   str1.push(" ");
-}*/
+}
 //else{
 str1.push(string.charCodeAt(i)+number);
 //}

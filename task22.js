@@ -1,29 +1,28 @@
- function checkOccurence(string,substring){
-   var count=0;
-   var is_Found;
-   var index=string.indexOf(substring);
-    if(substring===""){
-         //is_Found=0;
-      return false;
-       }
-   while(true){
-     is_Found=0;
-     if(index!==-1||(substring===substring.toUpperCase()|| substring===substring.toLowerCase())){
-       is_Found=1;
-     //count=count+1;
-       //index=string.indexOf(substring,index+1);
-     }
-     
-       break;
-     
-     
-     
-   }
-   if(is_Found===1){
-     return true;
-   }
- else{
-   return false;
- }
- }
- module.exports=checkOccurence;
+function findSubstring(string,substring){
+var str2="";
+var k,is_Found;  
+var length=substring.length;
+  if(substring===""||substring===null||string===""||substring===null){
+  return false;
+  }
+  
+  for(var i=0;i<string.length;i++){
+    is_Found=0;
+  k=string.slice(i,(length+i));
+    if((k.toUpperCase()===substring.toUpperCase())|| (k.toLowerCase()===substring.toLowerCase()))
+    {is_Found=1;
+     break;
+    }
+    
+  }
+  if(is_Found===1){
+  return true;
+  
+  }
+  else {
+  return false;
+  }
+}
+//var a=findSubstring("Learn programming and start earning","ing");
+//console.log(a);
+module.exports=findSubString;

@@ -1,5 +1,6 @@
 function incrementMessage(string,number){
 var str2=[];
+var dup;
  for(var i=0;i<string.length;i++){
 //var k=string[i];]
 var ascii_code=string.charCodeAt(i)+number;

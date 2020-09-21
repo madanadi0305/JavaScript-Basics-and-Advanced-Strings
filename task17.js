@@ -1,4 +1,4 @@
-function endsWithSubstring(string,substring){
+ function endsWithSubstring(string,substring){
 var string1=string.split(" ");
   var str2=[];
   var is_Found;
@@ -14,13 +14,13 @@ var k=string1[i];
 var last_index=k.length-1;
   
 for(var j=last_index;j>(last_index-substring.length);j--)  
-str2.push(k[j]);
-
+{str2.push(k[j]);
+}
 }
 
   var str3=str2.reverse().join("");
 
-   if((str3.toUpperCase()===substring.toUpperCase())||(str3.toLowerCase()===substring.toLowerCase())){
+   if(str3.toUpperCase()===substring.toUpperCase()||str3.toLowerCase()===substring.toLowerCase()){
    is_Found=1;
    break;
    }
@@ -35,7 +35,6 @@ return false;
   
 
 }
-
 module.exports=endsWithSubstring;
 
 

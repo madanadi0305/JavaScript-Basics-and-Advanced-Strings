@@ -20,7 +20,7 @@ str2.push(k[j]);
 
   var str3=str2.reverse().join("");
 
-   if(str3.toUpperCase()===substring.toUpperCase()||str3.toLowerCase()===substring.toLowerCase()){
+   if((str3.toUpperCase()===substring.toUpperCase())||(str3.toLowerCase()===substring.toLowerCase())){
    is_Found=1;
    break;
    }

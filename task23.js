@@ -19,7 +19,7 @@ str2.push(String.fromCharCode(ascii_code));
  else if(ascii_code>90 && ascii_code<96){
 dup=dup-(90-char_code);
 dup=dup%26;
-str2.push(String.fromCharCode(dup+64));
+str2.push(String.fromCharCode(dup));
 
  }
 }

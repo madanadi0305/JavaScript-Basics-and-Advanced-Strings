@@ -11,12 +11,17 @@ str2.push(String.fromCharCode(ascii_code));
    else if(string[i]===" "){
    str2.push(" ");
    }
- else if(ascii_code>=122){
+ else if(ascii_code>122){
   dup=dup-(122-char_code);
   dup=dup%26;
    str2.push(String.fromCharCode(dup+96));
  }
- 
+ else if(ascii_code>90){
+dup=dup-(90-char_code);
+dup=dup%26;
+str2.push(String.fromCharCode(dup+64));
+
+ }
 }
 return str2.join("");
 }

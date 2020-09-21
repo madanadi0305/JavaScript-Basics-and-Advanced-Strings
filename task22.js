@@ -23,6 +23,5 @@ var length=substring.length;
   return false;
   }
 }
-//var a=findSubstring("Learn programming and start earning","ing");
-//console.log(a);
-module.exports=findSubString;
+
+module.exports=findSubstring;

@@ -9,7 +9,12 @@ str2.push(String.fromCharCode(ascii_code));
    else if(string[i]===" "){
    str2.push(" ");
    }
- else{continue;}  
+ else if(ascii_code>=122){
+  dup=dup-(122-ascii_code);
+  dup=dup%26;
+   str2.push(String.fromCharCode(dup+96));
+ }
+ 
 }
 return str2.join("");
 }

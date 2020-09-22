@@ -1,24 +1,39 @@
-function checkAllAlphabets(string){
-    var is_Alphabet;
-if(string===""|| string===null){
-    return false;
+function checkAlphabet(string){
+var dup;
+var count=0;  
+var array=[];
+for(var i=0;i<string.length;i++){
+if(string[i]<='Z' && string[i]>='A'){
+dup=string.charCodeAt(i)-65;
+array[dup]=dup;
 }
-var string1=string.split("");
-for(var i=0;i<string1.length;i++)
-{var elem=string1[i];
- if(elem>='A'&& elem<='Z'){
-     is_Alphabet=1;
- }
- else if(elem>='a'&& elem<='z'){
-     is_Alphabet=2;
- }
+else if(string[i]<='z' && string[i]>='a'){
+dup=string.charCodeAt(i)-97;
+ array[dup]=dup; 
+}
+  
 
 }
-if(is_Alphabet===1||is_Alphabet===2){
-    return true;
+  
+console.log(array);
+console.log(array.length); 
+var is_AllAlphabet;  
+for(var i=0;i<=array.length;i++){
+ is_AllAlphabet=1; 
+if(array[i]<=25 && array[i]>=0){
+  //is_AllAlphabet=0;
+ // break;
+count=count+1;  
+//return false;
 }
-else{
-    return false;
+  
+  
 }
-}
-module.exports=checkAllAlphabets;
+  if(count===26)
+  {return true;}
+  else{
+  return false;
+  }
+  }
+module.exports=checkAlphabet;
+

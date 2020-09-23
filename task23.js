@@ -13,10 +13,10 @@ var elem=string.charCodeAt(i)+number;
    }
 
    else if((elem>122)){
-    dup=dup-122;
-    dup=dup%26+number;
-    dup=dup+96;
-    array[i]=String.fromCharCode(dup); 
+    //dup=dup-122;
+    //dup=dup%26+number;
+    //dup=dup+96;
+    array[i]="a"; 
     }
 
 }

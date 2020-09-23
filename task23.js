@@ -1,28 +1,23 @@
 function incrementMessage(string,number){
-var str2=[];
-var dup=number;
- for(var i=0;i<string.length;i++){
-//var k=string[i];]
-var ascii_code=string.charCodeAt(i)+number;
-var char_code=string.charCodeAt(i);
-if((ascii_code>=97 && ascii_code<=122)||(ascii_code<=90 && ascii_code>=65)){
-str2.push(String.fromCharCode(ascii_code));
-}  
-   else if(string[i]===" "){
-   str2.push(" ");
-   }
- else if(ascii_code>122){
-  dup=dup-(122-char_code);
-  dup=dup%26;
-   str2.push(String.fromCharCode(dup+96));
- }
- else if(ascii_code>90 && ascii_code<96){
-dup=dup-(90-char_code);
-dup=dup%26;
-str2.push(String.fromCharCode(dup));
-
- }
+var array=[];
+  for(var i=0;i<string.length;i++){
+var elem=string.charCodeAt(i)+number;
+ if(elem<=122 && elem>=97){
+ array[i]=String.fromCharCode(elem);
+ 
+ } 
+   else if(elem<=90 && elem>=65){
+   array[i]=String.fromCharCode(elem);
+   
+   } 
 }
-return str2.join("");
+console.log(array);
+for(var j=0;j<array.length;j++){
+if(array[j]===undefined){
+array[j]=" ";
+}
+  
+}
+ return array.join(""); 
 }
 module.exports=incrementMessage;

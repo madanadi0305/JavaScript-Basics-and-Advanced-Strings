@@ -14,7 +14,7 @@ var elem=string.charCodeAt(i)+number;
 console.log(array);
 for(var j=0;j<array.length;j++){
 if(array[j]===undefined){
-array[j]=" ";
+array[j]="a";
 }
   
 }

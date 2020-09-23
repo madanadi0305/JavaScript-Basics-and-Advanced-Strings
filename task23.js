@@ -1,5 +1,6 @@
 function incrementMessage(string,number){
 var array=[];
+var dup=number;
   for(var i=0;i<string.length;i++){
 var elem=string.charCodeAt(i)+number;
  if(elem<=122 && elem>=97){

@@ -2,6 +2,7 @@ function rotate(string,rotation_matrix){
 var split_matrix=rotation_matrix.split(" ");
 //console.log(split_matrix);
 var n=string.length;
+var charString;  
 var string1=string;  
 var rotated_string,min,TEMP,is_Anagram;
 var FIRSTCHARSTRING="";  
@@ -21,24 +22,29 @@ var FIRSTCHARSTRING="";
 string=rotated_string;
     
   }
-  for(var i=0;i<FIRSTCHARSTRING.length;i++){
+  console.log(string);
+  console.log(FIRSTCHARSTRING);
+  charString=FIRSTCHARSTRING.split("");  
+  for(var i=0;i<charString.length;i++){
     min=i;
-   for(var j=i+1;j<FIRSTCHARSTRING.length;j++) 
-   {if(FIRSTCHARSTRING[j]<FIRSTCHARSTRING[min]){
+   for(var j=i+1;j<charString.length;j++) 
+   {if(charString[j]<charString[min]){
      min=j;
    }
    }
    if(min!=i){
-    TEMP=FIRSTCHARSTRING[min]; 
-    FIRSTCHARSTRING[min]=FIRSTCHARSTRING[i];
-    FIRSTCHARSTRING[i]=TEMP;
+    TEMP=charString[min]; 
+    charString[min]=charString[i];
+    charString[i]=TEMP;
 
    }
   }
-
+  var charStr=charString.join("");
+ //  charStr=charStr.join("");
+  console.log(charStr);
   for(var i=0;i<string1.length;i++){
     is_Anagram=0;
-   if(string1.indexOf(FIRSTCHARSTRING)!==-1){
+   if(string1.indexOf(charStr)!==-1){
    is_Anagram=1;
 
    }
@@ -53,6 +59,6 @@ string=rotated_string;
 
   }
 }
-module.exports=rotate;
+//module.exports=rotate;
 //var a=rotate("abcde","L 3 R 2 R 4");
 //console.log(a);

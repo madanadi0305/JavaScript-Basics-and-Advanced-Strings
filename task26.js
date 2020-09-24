@@ -45,11 +45,11 @@ string=rotated_string;
 
   }
   if(is_Anagram===1){
-   return true;
+   return "YES";
 
   }
   else{
-  return false;
+  return "NO";
 
   }
 }

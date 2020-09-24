@@ -22,8 +22,8 @@ var FIRSTCHARSTRING="";
 string=rotated_string;
     
   }
-  console.log(string);
-  console.log(FIRSTCHARSTRING);
+  //console.log(string);
+  //console.log(FIRSTCHARSTRING);
   charString=FIRSTCHARSTRING.split("");  
   for(var i=0;i<charString.length;i++){
     min=i;
@@ -41,7 +41,7 @@ string=rotated_string;
   }
   var charStr=charString.join("");
  //  charStr=charStr.join("");
-  console.log(charStr);
+  //console.log(charStr);
   for(var i=0;i<string1.length;i++){
     is_Anagram=0;
    if(string1.indexOf(charStr)!==-1){

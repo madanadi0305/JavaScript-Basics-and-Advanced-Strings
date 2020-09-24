@@ -59,6 +59,6 @@ string=rotated_string;
 
   }
 }
-//module.exports=rotate;
+module.exports=rotate;
 //var a=rotate("abcde","L 3 R 2 R 4");
 //console.log(a);

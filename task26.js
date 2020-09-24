@@ -9,7 +9,7 @@ var FIRSTCHARSTRING="";
   for(var i=0;i<split_matrix.length;i++){
   if(i%2===0){
   var mag=split_matrix[i+1];
-  if(mag>=9){break;}
+  if(mag>=9 && mag<=0){break;}
   if(split_matrix[i]==="L"){
   rotated_string=string.slice(mag)+string.slice(0,mag);
   }

@@ -23,43 +23,70 @@ var FIRSTCHARSTRING="";
 string=rotated_string;
     
   }
-  //console.log(string);
-  //console.log(FIRSTCHARSTRING);
+ 
   charString=FIRSTCHARSTRING.split("");  
-  for(var i=0;i<charString.length;i++){
-    min=i;
-   for(var j=i+1;j<charString.length;j++) 
-   {if(charString[j]<charString[min]){
-     min=j;
-   }
-   }
-   if(min!=i){
-    TEMP=charString[min]; 
-    charString[min]=charString[i];
-    charString[i]=TEMP;
-
-   }
-  }
-  var charStr=charString.join("");
- //  charStr=charStr.join("");
-  //console.log(charStr);
-  for(var i=0;i<string1.length;i++){
-    is_Anagram=0;
-   if(string1.indexOf(charStr)!==-1){
-   is_Anagram=1;
-
-   }
-
-  }
-  if(is_Anagram===1){
-   return "YES";
-
-  }
+  var sorted_charString=sortString(charString);
+  var sorted_string=sortString(string1);
+  var checkAnagram=compare(sorted_string,sorted_charString);
+  if(checkAnagram===true){
+    return 'YES';
+  } 
   else{
-  return "NO";
-
+    return 'NO';
   }
 }
+
+function sortString(str1){
+ var min,TEMP;
+  var str=str1.split("");
+for(var i=0;i<str.length;i++){
+    min=i;
+   for(var j=i+1;j<str.length;j++) 
+   {
+     if(str[j]<str[min])
+        //.charCodeAt(j)<str.charCodeAt(min))
+     {
+     min=j;
+     }
+   }
+   if(min!=i){
+    TEMP=str[min]; 
+    str[min]=str[i];
+    str[i]=TEMP;
+
+   }
+  }
+  var str2=str.join("");
+  return str2;
+}
+
+
+function compare(str11,str12){
+//var str13="";
+var j=0;
+var is_Anagram;  
+
+  while(j<str11.length){
+
+    is_Anagram=0;
+    
+    if(str11.indexOf(str12)!==-1){
+    is_Anagram=1;
+      break;
+    }
+    j=j+1;
+  }
+  if(is_Anagram===1){
+  return true;
+  }
+  else{
+  return false;
+  }
+}
+
+
+
+
 module.exports=rotate;
 //var a=rotate("abcde","L 3 R 2 R 4");
 //console.log(a);

@@ -24,7 +24,7 @@ string=rotated_string;
     
   }
  
-  charString=FIRSTCHARSTRING.split("");  
+  charString=FIRSTCHARSTRING;  
   var sorted_charString=sortString(charString);
   var sorted_string=sortString(string1);
   var checkAnagram=compare(sorted_string,sorted_charString);

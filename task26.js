@@ -69,12 +69,12 @@ var is_Anagram;
   while(j<str11.length){
 
     is_Anagram=0;
-    if((str11.toUpperCase()===str12.toUpperCase())&&(str11.toLowerCase()===str12.toLowerCase())){
+   
     if(str11.indexOf(str12)!==-1){
     is_Anagram=1;
       break;
     }
-    }
+  
     j=j+1;
   }
   if(is_Anagram===1){

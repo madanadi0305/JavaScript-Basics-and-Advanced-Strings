@@ -28,9 +28,8 @@ string=rotated_string;
   }
  
   charString=FIRSTCHARSTRING;  
-  var sorted_charString=sortString(charString);
-  var sorted_string=sortString(string1);
-  var checkAnagram=compare(sorted_string,sorted_charString);
+ 
+  var checkAnagram=isAnagram(string,charString);
   if(checkAnagram===true){
     return 'YES';
   } 
@@ -39,58 +38,38 @@ string=rotated_string;
   }
 }
 
-function sortString(str1){
- var min,TEMP;
-  var str=str1.split("");
-for(var i=0;i<str.length;i++){
-    min=i;
-   for(var j=i+1;j<str.length;j++) 
-   {
-     if(str[j]<str[min])
-        //.charCodeAt(j)<str.charCodeAt(min))
-     {
-     min=j;
-     }
-   }
-   if(min!=i){
-    TEMP=str[min]; 
-    str[min]=str[i];
-    str[i]=TEMP;
-
-   }
-  }
-  var str2=str.join("");
-  return str2;
-}
 
 
-function compare(str11,str12){
-//var str13="";
-var j=0;
+function isAnagram(str11,str12){
+var countA;
 var is_Anagram;  
+var countB=0;
+var window_array=[];  
+  if(str11.length<str12.length){
+return false;
 
-  while(j<str11.length){
-
-    is_Anagram=0;
-   
-    if(str11.indexOf(str12)!==-1){
-    is_Anagram=1;
-      break;
-    }
+}
+ for(var i=0;i<str12.length;i++){
+ countB=countB+1;
+ } 
   
-    j=j+1;
-  }
-  if(is_Anagram===1){
+for(var i=0;i<str11.length;i++){
+countA=0;  
+for(var j=i;j<(str11.length+i);j++){
+window_array.push(str11[j]);
+ countA=countA+1; 
+}
+if(countA===countB){
+ // is_Anagram=1;
   return true;
-  }
-  else{
-  return false;
-  }
+}
+  
+}
+return false;
 }
 
 
 
 
 module.exports=rotate;
-//var a=rotate("abcde","L 3 R 2 R 4");
-//console.log(a);
+

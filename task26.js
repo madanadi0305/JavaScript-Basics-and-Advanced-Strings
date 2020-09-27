@@ -1,6 +1,6 @@
 function rotate(string,rotation_matrix){
 var split_matrix=rotation_matrix.split(" ");
-//console.log(split_matrix);
+
 if(string===""||string===null||rotation_matrix===""||rotation_matrix===null){
   return 'NO';
 }
@@ -22,8 +22,7 @@ var FIRSTCHARSTRING="";
     }
     FIRSTCHARSTRING=FIRSTCHARSTRING+rotated_string[0];  
   }
-  
-string=rotated_string;
+    string=rotated_string;
     
   }
  
@@ -39,37 +38,49 @@ string=rotated_string;
 }
 
 
-
-function isAnagram(str11,str12){
-var countA;
-var is_Anagram;  
-var countB=0;
-var window_array=[];  
-  if(str11.length<str12.length){
-return false;
-
-}
- for(var i=0;i<str12.length;i++){
- countB=countB+1;
+function isAnagram(str1,str2){
+//str1.split("").sort();
+//str2.split("").sort();
+ var window_array=[];
+  if(str1.length<str2.length)
+ {return false;
+ 
  } 
-  
-for(var i=0;i<str11.length;i++){
-countA=0;  
-for(var j=i;j<(str11.length+i);j++){
-window_array.push(str11[j]);
- countA=countA+1; 
-}
-if(countA===countB){
- // is_Anagram=1;
+ var count_substring=getCharCount(str2);
+ for(var i=0;i<(str1.length-str2.length+1);i++){
+ 
+   window_array.push(str1[str2.length+i]);
+  var window_count=getCharCount(window_array);
+  if(areCountsEqual(count_substring,window_count)){
   return true;
+  }
+ } 
+ return false; 
 }
-  
+
+function getCharCount(str){
+var counts={};
+  for(var i=0;i<str.length;i++){
+  var k=str[i];
+  if(!counts[k]){
+  counts[k]=1;
+  }
+    else{
+   counts[k]+=1; 
+    }
 }
-return false;
+return counts;  
 }
 
+function areCountsEqual(countA,countB){
+for(var i=0;i<countA.length;i++){
+var k=countA[i];
+  if(!countB[k]||(countA[k]!==countB[k])){
+  return false;
+  }
+}
+return true;
+}
 
-
-
-module.exports=rotate;
-
+var a=rotate("abcde","L 3 R 2 R 4");
+console.log(a);

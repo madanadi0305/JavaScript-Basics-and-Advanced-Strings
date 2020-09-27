@@ -81,6 +81,6 @@ var k=countA[i];
 }
 return true;
 }
-
-var a=rotate("abcde","L 3 R 2 R 4");
-console.log(a);
+module.exports=rotate;
+//var a=rotate("abcde","L 3 R 2 R 4");
+//console.log(a);

@@ -28,7 +28,7 @@ var FIRSTCHARSTRING="";
  
   charString=FIRSTCHARSTRING;  
  
-  var checkAnagram=isAnagram(string,charString);
+  var checkAnagram=anagram(string,charString);
   if(checkAnagram===true){
     return 'YES';
   } 
@@ -38,49 +38,78 @@ var FIRSTCHARSTRING="";
 }
 
 
-function isAnagram(str1,str2){
-//str1.split("").sort();
-//str2.split("").sort();
- var window_array=[];
-  if(str1.length<str2.length)
- {return false;
+function anagram(str1,str2){
+var slide_array=[];
+//var counts;  
+if(str1.length<str2.length){
+return false;
+}
+else if(str1===""||str1===null||str2===""||str2===null){
+return false;
+
+}
+console.log(str1);
+console.log(str2);
+var counts_str2=getStringCharCount(str2);
+console.log(counts_str2);  
+for(var i=0;i<(str1.length-str2.length+1);i++){
+var j=i;
+while(j<i+str2.length){  
+ // var k=str1[j];
  
- } 
- var count_substring=getCharCount(str2);
- for(var i=0;i<(str1.length-str2.length+1);i++){
+  slide_array.push(str1[j]);
  
-   window_array.push(str1[str2.length+i]);
-  var window_count=getCharCount(window_array);
-  if(areCountsEqual(count_substring,window_count)){
-  return true;
+  j=j+1;
+  //console.log(slide_array_count);
+}
+ var slide_array_count=getStringCharCount(slide_array); 
+//console.log(slide_array_count);
+  if(areCountsEqual(counts_str2,slide_array_count)){
+   console.log(slide_array_count); 
+   return true;
   }
- } 
- return false; 
+  
+}
+return false;  
+// console.log(slide_array_count); 
 }
 
-function getCharCount(str){
+
+//console.log(a);
+function getStringCharCount(str){
 var counts={};
   for(var i=0;i<str.length;i++){
-  var k=str[i];
+var k=str[i];
   if(!counts[k]){
-  counts[k]=1;
+   counts[k]=1;
   }
-    else{
-   counts[k]+=1; 
-    }
+  else{
+    counts[k]=counts[k]+1;
+  }
 }
-return counts;  
+return counts;
 }
 
-function areCountsEqual(countA,countB){
-for(var i=0;i<countA.length;i++){
-var k=countA[i];
-  if(!countB[k]||(countA[k]!==countB[k])){
+
+function areCountsEqual(count1,count2){
+for(var i=0;i<count1.length;i++){  
+  var k=count1[i];
+  if((!count2[k])||(count1[k]!==count2[k])){
+  //console.log(count1[k]);  
   return false;
   }
 }
 return true;
 }
+
+
+/*if(anagram("test","r")){
+console.log('YES');
+}
+else{
+console.log('NO');
+
+}*/
 module.exports=rotate;
 //var a=rotate("abcde","L 3 R 2 R 4");
 //console.log(a);

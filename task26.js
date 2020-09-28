@@ -100,7 +100,7 @@ return counts;
 function areCountsEqual(count1,count2){
 for(var i=0;i<count1.length;i++){  
   var k=count1[i];
-  if((!count2[k])||(count1[k]!==count2[k])){
+  if((!count2[k])&&(count1[k]!==count2[k])){
   //console.log(count1[k]);  
   return false;
   }

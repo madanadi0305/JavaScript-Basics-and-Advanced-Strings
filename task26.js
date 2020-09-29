@@ -64,13 +64,13 @@ if(str2.indexOf(str1[i+j])!==-1){
 return false;
 }
 
-if(anagram("racecar","rcr")){
+/*if(anagram("racecar","rcr")){
 console.log('YES');
 }
 else{
 console.log('NO');
 
-}
+}*/
 
 
 

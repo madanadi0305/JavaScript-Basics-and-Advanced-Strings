@@ -1,74 +1,45 @@
-function rotate(string,rotation_matrix){
-var split_matrix=rotation_matrix.split(" ");
-
-/*if(string===""||string===null||rotation_matrix===""||rotation_matrix===null){
-  return 'NO';
-}*/
-var n=string.length;
-var charString;  
-var string1=string;  
-
-var rotated_string,min,TEMP,is_Anagram;
-var FIRSTCHARSTRING="";  
-  for(var i=0;i<split_matrix.length;i++){
-  if(i%2===0){
-  var mag=split_matrix[i+1];
-  
-  if(split_matrix[i]==="L"){
-  rotated_string=string.slice(mag)+string.slice(0,mag);
-  }
-    else if(split_matrix[i]==='R'){
-    rotated_string=string.slice(n-mag)+string.slice(0,n-mag);
-    
+const isAnagram=(A,B)=>{
+  var arr1=[],arr2=[];
+  arr1=A.split("");
+  arr2=B.split("");
+  var k=0;
+  for(var i=0;i<=arr1.length-arr2.length;i++)
+  {
+    for(var j=0;j<arr2.length;j++)
+    {
+      if(B.indexOf(arr1[i+j])!=-1)
+      k=k+1;
     }
-    FIRSTCHARSTRING=FIRSTCHARSTRING+rotated_string[0];  
+    if(k==arr2.length)
+    return true;
+    k=0;
   }
-    string=rotated_string;
-    
+  return false
+}
+const task26 = (str1,str2)=>{
+  var arr1=[],arr2=[],firstChar="",q=0,ind=0;
+  arr1=str1.split("");
+  arr2=str2.split(" ");
+  var res1,res2;
+  res1="YES";
+  res2="NO"
+  while(q<arr2.length)
+  {
+    var dir=arr2[q];
+    var s=arr2[q+1]
+    s=parseInt(s,10);
+    if(dir=='L')
+    ind=(ind+s)%arr1.length;
+    else
+    ind=(ind-s)%arr1.length;
+    q=q+2;
+    if(ind<0)
+    ind=arr1.length+ind
+    firstChar=firstChar+arr1[ind];
   }
- 
-  charString=FIRSTCHARSTRING;  
- 
-  var checkAnagram=isAnagram(string1,charString);
-  if(checkAnagram){
-    return 'YES';
-  } 
-  else{
-    return 'NO';
-  }
+  if (isAnagram(str1,firstChar))
+  return res1
+  else
+  return res2
 }
-
-function isAnagram(str1,str2){
-var k=0;
-  for(var i=0;i<str1.length-str2.length;i++){
-for(var j=0;j<str2.length;j++){
-if(str2.indexOf(str1[i+j])!==-1){
-  k+=1;
- 
-
-}
-  
-}
-  if(k===str2.length){
-  return true;
- k=0; 
-  }  
-  
-}
-  
-return false;
-}
-
-/*if(anagram("racecar","rcr")){
-console.log('YES');
-}
-else{
-console.log('NO');
-
-}*/
-
-
-
-module.exports=rotate;
-
-
+module.exports=task26

@@ -35,7 +35,7 @@ var FIRSTCHARSTRING="";
   charString=FIRSTCHARSTRING;  
  
   var checkAnagram=isAnagram(string1,charString);
-  if(checkAnagram===true){
+  if(checkAnagram){
     return 'YES';
   } 
   else{

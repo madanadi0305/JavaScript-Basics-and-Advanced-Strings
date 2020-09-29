@@ -1,9 +1,9 @@
 function rotate(string,rotation_matrix){
 var split_matrix=rotation_matrix.split(" ");
 
-if(string===""||string===null||rotation_matrix===""||rotation_matrix===null){
+/*if(string===""||string===null||rotation_matrix===""||rotation_matrix===null){
   return 'NO';
-}
+}*/
 var n=string.length;
 var charString;  
 var string1=string;  

@@ -7,12 +7,7 @@ var split_matrix=rotation_matrix.split(" ");
 var n=string.length;
 var charString;  
 var string1=string;  
-for(var i=0;i<split_matrix.length;i++){
-  if(i%2!==0){
-var mag=split_matrix[i];
-if(mag>=9 || mag<0){return "NO";break;}
-  }
-}
+
 var rotated_string,min,TEMP,is_Anagram;
 var FIRSTCHARSTRING="";  
   for(var i=0;i<split_matrix.length;i++){

@@ -34,7 +34,7 @@ var FIRSTCHARSTRING="";
  
   charString=FIRSTCHARSTRING;  
  
-  var checkAnagram=anagram(string,charString);
+  var checkAnagram=isAnagram(string1,charString);
   if(checkAnagram===true){
     return 'YES';
   } 
@@ -43,79 +43,37 @@ var FIRSTCHARSTRING="";
   }
 }
 
-
-function anagram(str1,str2){
-var slide_array=[];
-//var counts;  
-if(str1.length<str2.length){
-return false;
-}
-else if(str1===""||str1===null||str2===""||str2===null){
-return false;
+function isAnagram(str1,str2){
+var k=0;
+  for(var i=0;i<str1.length-str2.length;i++){
+for(var j=0;j<str2.length;j++){
+if(str2.indexOf(str1[i+j])!==-1){
+  k+=1;
+ 
 
 }
-console.log(str1);
-console.log(str2);
-var counts_str2=getStringCharCount(str2);
-console.log(counts_str2);  
-for(var i=0;i<(str1.length-str2.length+1);i++){
-var j=i;
-while(j<i+str2.length){  
- // var k=str1[j];
- 
-  slide_array.push(str1[j]);
- 
-  j=j+1;
-  //console.log(slide_array_count);
-}
- var slide_array_count=getStringCharCount(slide_array); 
-//console.log(slide_array_count);
-  if(areCountsEqual(counts_str2,slide_array_count)){
-   console.log(slide_array_count); 
-   return true;
-  }
   
 }
-return false;  
-// console.log(slide_array_count); 
+  if(k===str2.length){
+  return true;
+ k=0; 
+  }  
+  
+}
+  
+return false;
 }
 
-
-//console.log(a);
-function getStringCharCount(str){
-var counts={};
-  for(var i=0;i<str.length;i++){
-var k=str[i];
-  if(!counts[k]){
-   counts[k]=1;
-  }
-  else{
-    counts[k]=counts[k]+1;
-  }
-}
-return counts;
-}
-
-
-function areCountsEqual(count1,count2){
-for(var i=0;i<count1.length;i++){  
-  var k=count1[i];
-  if((!count2[k])&&(count1[k]!==count2[k])){
-  //console.log(count1[k]);  
-  return false;
-  }
-}
-return true;
-}
-
-
-/*if(anagram("test","r")){
+if(anagram("racecar","rcr")){
 console.log('YES');
 }
 else{
 console.log('NO');
 
-}*/
+}
+
+
+
 module.exports=rotate;
-//var a=rotate("abcde","L 3 R 2 R 4");
-//console.log(a);
+
+
